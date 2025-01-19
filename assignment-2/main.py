@@ -7,15 +7,20 @@ if __name__ == "__main__":
     # Load the image
     image_path = "InputUngradedAssignment1.jpg"  # Replace with your image file
     image = cv2.imread(image_path)
+
     if image is None:
         print("Error: Image not found!")
         exit()
-
+    
+    
     # Ask user for manual or automatic detection
     print("Choose an option for bounding box detection:")
     print("1. Manual Detection")
     print("2. Automatic Detection")
     choice = input("Enter your choice (1 or 2): ")
+    
+    grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    cv2.imshow("Original Image", grayscale)
 
     if choice == "1":
         bbox = manual_bounding_box(image)

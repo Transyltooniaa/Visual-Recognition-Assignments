@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def k_means_segmentation(image, k=3):
+def k_means_segmentation(image, k=5):
     data = image.reshape((-1, 3))
     data = np.float32(data)
 
